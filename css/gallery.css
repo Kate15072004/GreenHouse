@@ -1,20 +1,21 @@
-.slider-section{
+ /*--ЛБ8 | Стили слайдера */
+.slider-section {
     margin: 50px 0;
 }
-.slider-container{
+.slider-container {
     max-width: 1200px;
     height: 375px;
     margin: 50px auto;
     position: relative;
 }
-.slider-image{
+.slider-image {
     height: 100%;
     width: 100%;
     background-image: url('../img/slider/bootstrap01.jpg');
     background-position: center center;
     background-size: cover;
 }
-.slider-arrow{
+.slider-arrow {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -23,18 +24,24 @@
     opacity: 0;
     transition: opacity 350ms ease-in-out;
 }
-.slider-arrow.left{
+.slider-arrow.left {
     left: 0;
-    background: linear-gradient(90deg, rgb(12, 168, 155) 0%, rgba(2, 126, 124, 0) 100%);
+    background: linear-gradient(90deg, rgba(0,18,36,1) 0%, rgba(0,212,255,0) 100%);
 }
-.slider-arrow.right{
+.slider-arrow.right {
     right: 0;
-    background: linear-gradient(-90deg, rgb(9, 152, 150) 0%, rgba(0, 212, 255, 0) 100%);
+    background: linear-gradient(-90deg, rgba(0,18,36,1) 0%, rgba(0,212,255,0) 100%);
 }
-.slider-container:hover .slider-arrow{
+.slider-container:hover .slider-arrow {
     opacity: 1;
 }
-.carousel{/*Добавление инструментов управления слайдером*/
+/*Ограничение максимальной ширины слайдера*/
+.carousel {
     max-width: 1200px;
-    margin: 50px auto;.
+    margin: 50px auto;
+    position: relative;
 }
+/*Копирайт*/
+.copyright {
+    color: white;
+}   

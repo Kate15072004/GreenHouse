@@ -1,21 +1,32 @@
-window.onload=function(){
-  const hamburger = document.getElementById('hamburger');
+ /*Функция переключения меню(Мобильные)*/
+ window.onload = function() {  
+    const hamburger = document.getElementById('hamburger');
 
-  hamburger.onclick = function(){
-      let topNav = document.getElementById('myTopnav');
-      if (topNav.className === 'responsive') {
-          topNav.className = '';
-      } else {
-          topNav.className = 'responsive';
-      }
-  }
+    hamburger.onclick = function() {
+        let topNav = document.getElementById('myTopnav');
+        if (topNav.classname === 'responsive') {
+            topNav.className = '';
+        } else {
+            topNav.className = 'responsive';
+        }
+    }
+   
+    const menulist = document.querySelectorAll('.menu-element'); /*Закрепляем header страницы*/
+    // Проходим циклом по найденым элементам
+    menulist.forEach(function(element) {
+        // Каждому элементу создаём обработчик события "клик мыши"
+        element.addEventListener('click', function(event)  {
+            // Считываем атрибут data у элемента, по которому был произведён щелчок
+            const elementLink = element.dataset.link;
 
-  const menuList = document.querySelectorAll('.menu-element');
-  menuList.forEach(function(element) {
-      element.addEventListener('click', function(event){
-          event.preventDefault();
-          const elementLink = element.dataset.link;
-          document.getElementById(elementLink).scrollIntoView({behavior: 'smooth'});
-      });
-  });
+            // Проверяем, есть ли альтернативная ссылка и тогда выполняем дальше
+            if (elementLink) {
+                // Прерываем стандартное поведение ссылки
+                event.preventDefault();
+                // Плавно прокручиваем страницу к искомому блоку
+                document.getElementById(elementLink).scrollIntoView({ behaviour: 'smooth'});    
+            }
+            // Иначе ничего не делаем            
+        });
+    });
 }
